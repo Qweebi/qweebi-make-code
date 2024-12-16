@@ -1,7 +1,7 @@
 {
-    "id": "sample",
-    "name": "sample",
-    "title": "MakeCode Editor Sample",
+    "id": "001",
+    "name": "Qweebi - MakeCode",
+    "title": "Qweebi - MakeCode Editor",
     "corepkg": "core",
     "cloud": {
         "workspace": false,
