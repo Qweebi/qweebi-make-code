@@ -25,7 +25,7 @@ jobs:
       - name: Build PXT Project
         run: pxt staticpkg
 
-      -name: Copy Headers
+      - name: Copy Headers
         run: cp build-config/_headers built/packaged/
         
       - name: Deploy to Cloudflare Pages
