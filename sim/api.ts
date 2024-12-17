@@ -28,8 +28,10 @@ namespace pxsim.hare {
 
 namespace pxsim.unity {
     export function logHello(){
-        if (window.parent && typeof window.parent['sendMessage'] === "function") {
-            window.parent['sendMessage'](`SEND_MIXPANEL_EVENT:BtnClickBrowserVideoPlayerClose:VideoId:xx:Timestamp:12`)
+        const parent = window.parent as Record<string, any>
+        if (parent && typeof parent.sendMessage === "function") {
+            // Call the sendMessage function in the parent window
+            parent.sendMessage(`SEND_MIXPANEL_EVENT:BtnClickBrowserVideoPlayerClose:VideoId:xx:Timestamp:12`)
         }
     }
 }
