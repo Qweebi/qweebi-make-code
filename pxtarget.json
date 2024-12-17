@@ -19,7 +19,9 @@
   },
   "simulator": {
     "autoRun": false,
-    "hide": true
+    "hide": true,
+    "aspectRatio": 0.0,
+    "boardDefinition": null
   },
   "appTheme": {
     "logoUrl": "https://github.com/Microsoft/pxt-sample",
