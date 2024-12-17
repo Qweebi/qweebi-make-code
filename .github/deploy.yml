@@ -1,0 +1,39 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          
+      - name: Install Dependencies
+        run: |
+          npm install -g pxt
+          npm install
+        
+      - name: Build PXT Project
+        run: pxt staticpkg
+
+      -name: Copy Headers
+        run: cp build-config/_headers built/packaged/
+        
+      - name: Deploy to Cloudflare Pages
+        id: cloudflare-deploy
+        uses: cloudflare/wrangler-action@v3
+        env:
+          PAGES_PROJECT_NAME: qweebi-make-code
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy built/packaged --project-name qweebi-make-code --branch ${{ github.head_ref || 'master' }}

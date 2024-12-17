@@ -1,0 +1,12 @@
+/*.js
+    Content-Type: application/javascript
+/*.css
+    Content-Type: text/css
+/*.html
+    Content-Type: text/html
+/*.webmanifest
+    Content-Type: application/manifest+json
+/*.png
+    Content-Type: image/png
+/*.manifest
+    Content-Type: text/cache-manifest
