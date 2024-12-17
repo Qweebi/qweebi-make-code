@@ -30,8 +30,6 @@ namespace pxsim.unity {
     export function logHello(){
         if (window.parent && typeof window.parent['sendMessage'] === "function") {
             window.parent['sendMessage'](`SEND_MIXPANEL_EVENT:BtnClickBrowserVideoPlayerClose:VideoId:xx:Timestamp:12`)
-          } else {
-            console.error("Parent function is not available.");
         }
     }
 }
