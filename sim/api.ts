@@ -26,6 +26,14 @@ namespace pxsim.hare {
     }
 }
 
+namespace pxsim.unity {
+    export function logHello(){
+        window.parent.sendMessage(
+            `SEND_MIXPANEL_EVENT:BtnClickBrowserVideoPlayerClose:VideoId:xx:Timestamp:12`
+          );
+    }
+}
+
 namespace pxsim.turtle {
     /**
      * Moves the sprite forward
