@@ -51,6 +51,7 @@
   "turtle.onBump|block": "on bump",
   "turtle.turn|block": "turn %direction|by %angle degrees",
   "turtle|block": "turtle",
+  "unity.helloUnityNamespace|block": "helloUnity namespace",
   "{id:category}Array": "Array",
   "{id:category}Arrays": "Arrays",
   "{id:category}Boolean": "Boolean",
@@ -67,6 +68,7 @@
   "{id:category}String": "String",
   "{id:category}Text": "Text",
   "{id:category}Turtle": "Turtle",
+  "{id:category}Unity": "Unity",
   "{id:group}Modify": "Modify",
   "{id:group}Operations": "Operations",
   "{id:group}Read": "Read"

@@ -14,6 +14,12 @@ declare namespace hare {
     function onLand(handler: (height: number, more: number, most: number) => void): void;
 
 }
+declare namespace unity {
+    //% blockId=helloUnityNamespace block="helloUnity namespace"
+    //% shim=unity::helloUnityNamespace
+    function helloUnityNamespace(): void;
+
+}
 declare namespace turtle {
     /**
      * Moves the sprite forward
