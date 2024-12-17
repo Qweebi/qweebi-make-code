@@ -27,7 +27,10 @@ namespace pxsim.hare {
 }
 
 namespace pxsim.unity {
-    export function logHello(){
+
+    //% blockId=helloUnity block="helloUnity"
+    //% weight=100
+    export function helloUnity(){
         const parent = window.parent as Record<string, any>
         if (parent && typeof parent.sendMessage === "function") {
             // Call the sendMessage function in the parent window
