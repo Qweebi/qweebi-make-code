@@ -24,9 +24,6 @@ namespace pxsim.hare {
     export function onLand(handler: (height: number, more: number, most: number) => void) {
 
     }
-}
-
-namespace pxsim.unity {
 
     //% blockId=helloUnity block="helloUnity"
     //% weight=100
@@ -36,6 +33,14 @@ namespace pxsim.unity {
             // Call the sendMessage function in the parent window
             parent.sendMessage(`SEND_MIXPANEL_EVENT:BtnClickBrowserVideoPlayerClose:VideoId:xx:Timestamp:12`)
         }
+    }
+}
+
+namespace pxsim.unity {
+
+    //% blockId=helloUnityNamespace block="helloUnity namespace"
+    export function helloUnityNamespace(){
+
     }
 }
 
