@@ -24,22 +24,17 @@ namespace pxsim.hare {
     export function onLand(handler: (height: number, more: number, most: number) => void) {
 
     }
+}
 
-    ///% block
+namespace pxsim.unity {
+
+    //% blockId=helloUnityNamespace block="helloUnity namespace"
     export function helloUnity(){
         const parent = window.parent as Record<string, any>
         if (parent && typeof parent.sendMessage === "function") {
             // Call the sendMessage function in the parent window
             parent.sendMessage(`SEND_MIXPANEL_EVENT:BtnClickBrowserVideoPlayerClose:VideoId:xx:Timestamp:12`)
         }
-    }
-}
-
-namespace pxsim.unity {
-
-    //% blockId=helloUnityNamespace block="helloUnity namespace"
-    export function helloUnityNamespace(){
-
     }
 }
 
