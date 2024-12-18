@@ -28,12 +28,16 @@ namespace pxsim.hare {
 
 namespace pxsim.unity {
 
-    //% blockId=helloUnityNamespace block="helloUnity namespace"
+    //% blockId=helloUnity block="helloUnity"
     export function helloUnity(){
         const parent = window.parent as Record<string, any>
         if (parent && typeof parent.sendMessage === "function") {
             // Call the sendMessage function in the parent window
+            console.log("MakeCode: calling parent function..");  
             parent.sendMessage(`SEND_MIXPANEL_EVENT:BtnClickBrowserVideoPlayerClose:VideoId:xx:Timestamp:12`)
+        }
+        else{
+            console.log("MakeCode: parent or function not found");  
         }
     }
 }
