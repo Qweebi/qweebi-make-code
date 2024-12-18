@@ -40,10 +40,10 @@ namespace pxsim.unity {
         {
             if(parent == null)
             {
-                console.log("MakeCode: parent or function not found");  
+                console.log("MakeCode: parent found");  
             }
             else{
-                console.log("MakeCode: parent or function not found");  
+                console.log("MakeCode: parent function not found");  
             }
             
         }
