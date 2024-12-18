@@ -36,8 +36,16 @@ namespace pxsim.unity {
             console.log("MakeCode: calling parent function..");  
             parent.sendMessage(`SEND_MIXPANEL_EVENT:BtnClickBrowserVideoPlayerClose:VideoId:xx:Timestamp:12`)
         }
-        else{
-            console.log("MakeCode: parent or function not found");  
+        else
+        {
+            if(parent == null)
+            {
+                console.log("MakeCode: parent or function not found");  
+            }
+            else{
+                console.log("MakeCode: parent or function not found");  
+            }
+            
         }
     }
 }

@@ -13,15 +13,11 @@ declare namespace hare {
     //% shim=hare::onLand
     function onLand(handler: (height: number, more: number, most: number) => void): void;
 
-    //% block
-    //% shim=hare::helloUnity
-    function helloUnity(): void;
-
 }
 declare namespace unity {
-    //% blockId=helloUnityNamespace block="helloUnity namespace"
-    //% shim=unity::helloUnityNamespace
-    function helloUnityNamespace(): void;
+    //% blockId=helloUnity block="helloUnity"
+    //% shim=unity::helloUnity
+    function helloUnity(): void;
 
 }
 declare namespace turtle {
