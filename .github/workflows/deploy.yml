@@ -16,7 +16,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-          
+
+      - name: Clean Before Build
+        run: |
+          # Clean up the previous build output (e.g., the 'built/packaged/' directory)
+          rm -rf built/packaged/ 
+        
       - name: Install Dependencies
         run: |
           npm install -g pxt
