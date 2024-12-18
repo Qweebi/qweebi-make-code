@@ -36,6 +36,7 @@
   "String.substr|block": "substring of %this=text|from %start|of length %length",
   "String|block": "String",
   "console|block": "console",
+  "hare.helloUnity|block": "true",
   "hare.hop|block": "hop %hop on color %color=colorNumberPicker",
   "hare.onLand|block": "on land",
   "hare|block": "hare",
