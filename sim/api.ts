@@ -30,31 +30,16 @@ namespace pxsim.unity {
 
     //% blockId=helloUnity block="helloUnity"
     export function helloUnity() {
-        //window.parent.postMessage("SendMsg", `SEND_MIXPANEL_EVENT:BtnClickBrowserVideoPlayerClose:VideoId:xx:Timestamp:12`)
-        const parent = window.parent as Record<string, any>
-        if (parent && typeof parent.sendMessage === "function") {
-            // Call the sendMessage function in the parent window
-            console.log("MakeCode: calling parent function..");
-            parent.sendMessage(`SEND_MIXPANEL_EVENT:BtnClickBrowserVideoPlayerClose:VideoId:xx:Timestamp:12`)
-        }
-        else {
-            if (parent == null) {
-                console.log("MakeCode: parent found");
-            }
-            else {
-                console.log("MakeCode: parent is : " + window.parent.document.title);
-                console.log("MakeCode: parent function not found");
-                //document.body.postm
-                if (!!window.parent) {
-                    window.parent.postMessage({
-                        codeCommand: 'From Make code',
-                        codeData: {
-                            key: "Hello",
-                        },
-                    }, '*');
-                }
-            }
-
+        if (!window.parent) {
+            console.log('MakeCode: Parent not found');
+        } else {
+            console.log(`MakeCode: Parent found. It is: ${window.parent.document.title}`);
+            window.parent.postMessage({
+                codeCommand: 'SEND_MIXPANEL_EVENT',
+                codeData: {
+                    eventName: "BtnClickBrowserVideoPlayerClose",
+                },
+            }, '*');
         }
     }
 }
@@ -90,7 +75,7 @@ namespace pxsim.turtle {
 
     /**
      * Triggers when the turtle bumps a wall
-     * @param handler 
+     * @param handler
      */
     //% blockId=onBump block="on bump"
     export function onBump(handler: RefAction) {
@@ -123,7 +108,9 @@ namespace pxsim.loops {
     }
 }
 
-function logMsg(m: string) { console.log(m) }
+function logMsg(m: string) {
+    console.log(m)
+}
 
 namespace pxsim.console {
     /**
@@ -141,24 +128,25 @@ namespace pxsim {
     /**
      * A ghost on the screen.
      */
-    //%
+        //%
     export class Sprite {
         /**
          * The X-coordiante
          */
-        //%
+            //%
         public x = 100;
         /**
-        * The Y-coordiante
-        */
-        //%
+         * The Y-coordiante
+         */
+            //%
         public y = 100;
         public angle = 90;
 
         constructor() {
         }
 
-        private foobar() { }
+        private foobar() {
+        }
 
         /**
          * Move the thing forward
