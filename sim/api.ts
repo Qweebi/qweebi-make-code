@@ -30,7 +30,7 @@ namespace pxsim.unity {
 
     //% blockId=helloUnity block="helloUnity"
     export function helloUnity(){
-        window.parent.postMessage("SendMsg", `SEND_MIXPANEL_EVENT:BtnClickBrowserVideoPlayerClose:VideoId:xx:Timestamp:12`)
+        //window.parent.postMessage("SendMsg", `SEND_MIXPANEL_EVENT:BtnClickBrowserVideoPlayerClose:VideoId:xx:Timestamp:12`)
         const parent = window.parent as Record<string, any>
         if (parent && typeof parent.sendMessage === "function") {
             // Call the sendMessage function in the parent window
@@ -46,6 +46,7 @@ namespace pxsim.unity {
             else{
                 console.log("MakeCode: parent is : " + window.parent.document.title);
                 console.log("MakeCode: parent function not found");  
+                window.postMessage("SendMsg", `SEND_MIXPANEL_EVENT:BtnClickBrowserVideoPlayerClose:VideoId:xx:Timestamp:12`)
             }
             
         }
