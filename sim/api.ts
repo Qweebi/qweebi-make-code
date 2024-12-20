@@ -26,6 +26,15 @@ namespace pxsim.hare {
     }
 }
 
+let hasDefinedVolleyballReceiver = false;
+const defineVolleyballReceiver = () => {
+    if (!hasDefinedVolleyballReceiver) {
+        window.parent.addEventListener('message', (event) => {
+            event.source.parent.parent.postMessage(event.data, '*');
+        });
+    }
+};
+
 namespace pxsim.unity {
 
     //% blockId=helloUnity block="helloUnity"
@@ -38,6 +47,7 @@ namespace pxsim.unity {
             console.log('MakeCode: Parent not found');
         } else {
             console.log(`MakeCode: Parent found. It is: ${topLevelParent.document.title}`);
+            defineVolleyballReceiver();
             topLevelParent.postMessage({
                 codeCommand: 'SEND_MIXPANEL_EVENT',
                 codeData: {
