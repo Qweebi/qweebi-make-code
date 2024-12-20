@@ -34,6 +34,7 @@ namespace pxsim.unity {
         if (parent && typeof parent.sendMessage === "function") {
             // Call the sendMessage function in the parent window
             console.log("MakeCode: calling parent function..");  
+            window.parent.postMessage("SendMsg", "")
             parent.sendMessage(`SEND_MIXPANEL_EVENT:BtnClickBrowserVideoPlayerClose:VideoId:xx:Timestamp:12`)
         }
         else
@@ -43,6 +44,7 @@ namespace pxsim.unity {
                 console.log("MakeCode: parent found");  
             }
             else{
+                console.log("MakeCode: parent is : " + window.parent.document.title);
                 console.log("MakeCode: parent function not found");  
             }
             
