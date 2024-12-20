@@ -30,11 +30,15 @@ namespace pxsim.unity {
 
     //% blockId=helloUnity block="helloUnity"
     export function helloUnity() {
-        if (!window.parent) {
+        let topLevelParent = undefined;
+        while (window.parent !== topLevelParent) {
+            topLevelParent = window.parent;
+        }
+        if (!topLevelParent) {
             console.log('MakeCode: Parent not found');
         } else {
-            console.log(`MakeCode: Parent found. It is: ${window.parent.document.title}`);
-            window.parent.postMessage({
+            console.log(`MakeCode: Parent found. It is: ${topLevelParent.document.title}`);
+            topLevelParent.postMessage({
                 codeCommand: 'SEND_MIXPANEL_EVENT',
                 codeData: {
                     eventName: "BtnClickBrowserVideoPlayerClose",
