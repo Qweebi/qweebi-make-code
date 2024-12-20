@@ -46,7 +46,12 @@ namespace pxsim.unity {
             else{
                 console.log("MakeCode: parent is : " + window.parent.document.title);
                 console.log("MakeCode: parent function not found");  
-                window.postMessage("SendMsg", `SEND_MIXPANEL_EVENT:BtnClickBrowserVideoPlayerClose:VideoId:xx:Timestamp:12`)
+                //document.body.postm
+                (document.getElementById("unity-container")! as HTMLIFrameElement).contentWindow!.postMessage(
+                    {
+                        embeddedCommand: 'From Make code',
+                        embeddedData: "Hello"
+                    });
             }
             
         }
