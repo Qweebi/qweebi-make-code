@@ -32,6 +32,9 @@ jobs:
 
       - name: Copy Headers
         run: cp build-config/_headers built/packaged/
+
+      - name: Add volleyball script
+        run: cat built/packaged/index.html | node scripts/insertVolleyball.js | cat > modified.html && mv modified.html built/packaged/index.html
         
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
