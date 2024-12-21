@@ -30,13 +30,6 @@ namespace pxsim.unity {
 
     //% blockId=helloUnity block="helloUnity"
     export function helloUnity() {
-        window.addEventListener('message', (event) => {
-            const command = event.data.unityCommand;
-            const data = event.data.unityData;
-            if (!!command) {
-                console.log(`Received command ${command} from unity with data: ${data}`);
-            }
-        });
         if (!window.parent) {
             console.log('MakeCode: Parent not found');
         } else {
@@ -47,6 +40,14 @@ namespace pxsim.unity {
                     eventName: "BtnClickBrowserVideoPlayerClose",
                 },
             }, '*');
+
+            window.parent.addEventListener('message', (event) => {
+                const command = event.data.unityCommand;
+                const data = event.data.unityData;
+                if (!!command) {
+                    console.log(`Received command ${command} from unity with data: ${data}`);
+                }
+            });
         }
     }
 }
