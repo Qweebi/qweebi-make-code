@@ -1,9 +1,9 @@
-const stringToInsert = '<script>' +
-  'window.addEventListener("message", (event) => {' +
-  '  if (!!window.parent && !!event.data.codeCommand) {' +
-  '    window.parent.postMessage(event.data, "*");' +
-  '  }' +
-  '});' +
+const stringToInsert = '<script>\n' +
+  'window.addEventListener("message", (event) => {\n' +
+  '  if (!!window.parent && !!event.data.codeCommand) {\n' +
+  '    window.parent.postMessage(event.data, "*");\n' +
+  '  }\n' +
+  '});\n' +
   '</script>';
 
 let input = '';
